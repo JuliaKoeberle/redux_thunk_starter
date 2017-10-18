@@ -5,7 +5,7 @@ import { itemsFetchData } from '../actions/items';
 class ItemList extends Component {
 
     componentDidMount() {
-        this.props.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
+        this.props.fetchData('https://jsonplaceholder.typicode.com/posts');
     }    
 
     render() {
@@ -18,10 +18,12 @@ class ItemList extends Component {
         }
 
         return (
-            <ul>
+            <ul className="list-group">
                 {this.props.items.map((item) => (
-                    <li key={item.id}>
-                        {item.label}
+                    <li className="list-group-item" key={item.id}>
+                        <h3>{item.title}</h3>
+                        <p>{item.body}</p>
+                        <p><em>provided by user:  {item.userId}</em></p>
                     </li>
                 ))}
             </ul>

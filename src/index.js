@@ -9,5 +9,7 @@ const store = configureStore();
 
 ReactDOM.render(
 <Provider store={store}>
-    <ItemList />
+    <div className="container">
+        <ItemList />
+    </div>
 </Provider>, document.getElementById('root'));
